@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/JinhuaBarOLLib" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/JinhuaBarOLLib" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Player">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CallBack" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="CardType" type="tns:CardType" />
+      <xs:element minOccurs="0" name="Cards" nillable="true" type="tns:ArrayOfCard" />
+      <xs:element minOccurs="0" name="Chips" type="xs:int" />
+      <xs:element minOccurs="0" name="IsGiveUp" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSee" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSee2String" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyBet" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoomName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Player" nillable="true" type="tns:Player" />
+  <xs:simpleType name="CardType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Single" />
+      <xs:enumeration value="Pair" />
+      <xs:enumeration value="Junko" />
+      <xs:enumeration value="GoldeFlower" />
+      <xs:enumeration value="Flush" />
+      <xs:enumeration value="Leopard" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CardType" nillable="true" type="tns:CardType" />
+  <xs:complexType name="ArrayOfCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Card" nillable="true" type="tns:Card" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCard" nillable="true" type="tns:ArrayOfCard" />
+  <xs:complexType name="Card">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Number" type="xs:int" />
+      <xs:element minOccurs="0" name="Number2String" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Suit2Sharp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="suit" type="tns:Suit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Card" nillable="true" type="tns:Card" />
+  <xs:simpleType name="Suit">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Spades">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9824</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Plumblossom">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9827</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Hearts">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9829</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Cube">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9830</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Suit" nillable="true" type="tns:Suit" />
+</xs:schema>

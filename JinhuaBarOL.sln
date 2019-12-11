@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.902
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinhuaBarOLLib", "JinhuaBarOLLib\JinhuaBarOLLib.csproj", "{41B751A9-A708-419E-A257-180A039064F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinhuaBarOLHost", "JinhuaBarOLHost\JinhuaBarOLHost.csproj", "{49B2A3DD-8436-48B9-8B27-A8CC7E6665A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JinhuaBarOLClient", "JinhuaBarOLClient\JinhuaBarOLClient.csproj", "{C8289B7D-2BB8-4C8A-81CF-B1BC30A3CABF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{41B751A9-A708-419E-A257-180A039064F7} = {41B751A9-A708-419E-A257-180A039064F7}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41B751A9-A708-419E-A257-180A039064F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41B751A9-A708-419E-A257-180A039064F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41B751A9-A708-419E-A257-180A039064F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41B751A9-A708-419E-A257-180A039064F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49B2A3DD-8436-48B9-8B27-A8CC7E6665A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49B2A3DD-8436-48B9-8B27-A8CC7E6665A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49B2A3DD-8436-48B9-8B27-A8CC7E6665A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49B2A3DD-8436-48B9-8B27-A8CC7E6665A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8289B7D-2BB8-4C8A-81CF-B1BC30A3CABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8289B7D-2BB8-4C8A-81CF-B1BC30A3CABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8289B7D-2BB8-4C8A-81CF-B1BC30A3CABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8289B7D-2BB8-4C8A-81CF-B1BC30A3CABF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5CBBDDE-D26D-4CB4-B535-609680480247}
+	EndGlobalSection
+EndGlobal
