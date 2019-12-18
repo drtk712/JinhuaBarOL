@@ -19,7 +19,7 @@ namespace JinhuaBarOLLib
         [OperationContract]//玩家创建房间
         void CteateRoom(string name, bool isOffLine);
         [OperationContract]
-        string ShowRoomList();
+        string ShowRoomList(string name);
         [OperationContract]
         string JoinRoom(string name, string roomName);
         [OperationContract]

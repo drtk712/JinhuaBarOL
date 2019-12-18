@@ -12,7 +12,7 @@ namespace JinhuaBarOLClient.GameService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="GameService.IGameService", CallbackContract=typeof(JinhuaBarOLClient.GameService.IGameServiceCallback))]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="GameService.IGameService", CallbackContract=typeof(JinhuaBarOLClient.GameService.IGameServiceCallback), SessionMode=System.ServiceModel.SessionMode.Required)]
     public interface IGameService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/Login", ReplyAction="http://tempuri.org/IGameService/LoginResponse")]
@@ -34,10 +34,10 @@ namespace JinhuaBarOLClient.GameService {
         System.Threading.Tasks.Task CteateRoomAsync(string name, bool isOffLine);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/ShowRoomList", ReplyAction="http://tempuri.org/IGameService/ShowRoomListResponse")]
-        string ShowRoomList();
+        string ShowRoomList(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/ShowRoomList", ReplyAction="http://tempuri.org/IGameService/ShowRoomListResponse")]
-        System.Threading.Tasks.Task<string> ShowRoomListAsync();
+        System.Threading.Tasks.Task<string> ShowRoomListAsync(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameService/JoinRoom", ReplyAction="http://tempuri.org/IGameService/JoinRoomResponse")]
         string JoinRoom(string name, string roomName);
@@ -139,12 +139,12 @@ namespace JinhuaBarOLClient.GameService {
             return base.Channel.CteateRoomAsync(name, isOffLine);
         }
         
-        public string ShowRoomList() {
-            return base.Channel.ShowRoomList();
+        public string ShowRoomList(string name) {
+            return base.Channel.ShowRoomList(name);
         }
         
-        public System.Threading.Tasks.Task<string> ShowRoomListAsync() {
-            return base.Channel.ShowRoomListAsync();
+        public System.Threading.Tasks.Task<string> ShowRoomListAsync(string name) {
+            return base.Channel.ShowRoomListAsync(name);
         }
         
         public string JoinRoom(string name, string roomName) {

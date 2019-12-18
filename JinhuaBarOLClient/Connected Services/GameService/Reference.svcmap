@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8000/JinhuaBarOL/GameService/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="net.tcp://localhost:8000/JinhuaBarOL/GameService/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="64c6b916-da48-4d90-a1ac-edf22aec3639" SourceId="1" SourceUrl="http://localhost:8000/JinhuaBarOL/GameService/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="9cbcb7d6-9b03-46ba-b3ed-21f6e71c634a" SourceId="1" SourceUrl="http://localhost:8000/JinhuaBarOL/GameService/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="2fcdb707-ca00-4ac1-9ee6-67bec2cd859a" SourceId="1" SourceUrl="http://localhost:8000/JinhuaBarOL/GameService/mex" />
-    <MetadataFile FileName="JinhuaBarOLLib.xsd" MetadataType="Schema" ID="f09e44e5-c406-47de-b96b-2ca288a35cb6" SourceId="1" SourceUrl="http://localhost:8000/JinhuaBarOL/GameService/mex" />
+    <MetadataFile FileName="service11.wsdl" MetadataType="Wsdl" ID="bc07deda-86c5-4f7d-a244-71683f0dbc31" SourceId="1" SourceUrl="net.tcp://localhost:8000/JinhuaBarOL/GameService/mex" />
+    <MetadataFile FileName="service22.xsd" MetadataType="Schema" ID="27a96544-fb87-405c-b033-84e3dbd4c9e9" SourceId="1" SourceUrl="net.tcp://localhost:8000/JinhuaBarOL/GameService/mex" />
+    <MetadataFile FileName="service23.xsd" MetadataType="Schema" ID="1cc2ea0c-848a-47b3-9a84-c81cddf6d332" SourceId="1" SourceUrl="net.tcp://localhost:8000/JinhuaBarOL/GameService/mex" />
+    <MetadataFile FileName="JinhuaBarOLLib11.xsd" MetadataType="Schema" ID="dec3b547-cc7b-4233-b2e0-a9e077e36acb" SourceId="1" SourceUrl="net.tcp://localhost:8000/JinhuaBarOL/GameService/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

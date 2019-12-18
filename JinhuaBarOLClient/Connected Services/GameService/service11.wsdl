@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GameService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IGameService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/JinhuaBarOLLib" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGameService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_ShowInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowInformation" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_ShowInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShowInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_CteateRoom_InputMessage">
+    <wsdl:part name="parameters" element="tns:CteateRoom" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_CteateRoom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CteateRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_ShowRoomList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ShowRoomList" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_ShowRoomList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ShowRoomListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_JoinRoom_InputMessage">
+    <wsdl:part name="parameters" element="tns:JoinRoom" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_JoinRoom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:JoinRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_LeaveRoom_InputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveRoom" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_LeaveRoom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveRoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_StartGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartGame" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_StartGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_ResetGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetGame" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_ResetGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_test_InputMessage">
+    <wsdl:part name="parameters" element="tns:test" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:testResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_ShowMessage_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ShowMessage" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_PlayerControl_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerControl" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_PlayerControl_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PlayerControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameService_ClearScreen_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ClearScreen" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="IGameService">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/Login" message="tns:IGameService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/LoginResponse" message="tns:IGameService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ShowInformation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/ShowInformation" message="tns:IGameService_ShowInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/ShowInformationResponse" message="tns:IGameService_ShowInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="CteateRoom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/CteateRoom" message="tns:IGameService_CteateRoom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/CteateRoomResponse" message="tns:IGameService_CteateRoom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ShowRoomList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/ShowRoomList" message="tns:IGameService_ShowRoomList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/ShowRoomListResponse" message="tns:IGameService_ShowRoomList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="JoinRoom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/JoinRoom" message="tns:IGameService_JoinRoom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/JoinRoomResponse" message="tns:IGameService_JoinRoom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="LeaveRoom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/LeaveRoom" message="tns:IGameService_LeaveRoom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/LeaveRoomResponse" message="tns:IGameService_LeaveRoom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="StartGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/StartGame" message="tns:IGameService_StartGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/StartGameResponse" message="tns:IGameService_StartGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ResetGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/ResetGame" message="tns:IGameService_ResetGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/ResetGameResponse" message="tns:IGameService_ResetGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="test">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/test" message="tns:IGameService_test_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/testResponse" message="tns:IGameService_test_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ShowMessage">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/ShowMessage" message="tns:IGameService_ShowMessage_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PlayerControl">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/PlayerControl" message="tns:IGameService_PlayerControl_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameService/PlayerControlResponse" message="tns:IGameService_PlayerControl_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ClearScreen">
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameService/ClearScreen" message="tns:IGameService_ClearScreen_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IGameService" type="tns:IGameService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IGameService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowInformation">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/ShowInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CteateRoom">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/CteateRoom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowRoomList">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/ShowRoomList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="JoinRoom">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/JoinRoom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveRoom">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/LeaveRoom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/StartGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetGame">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/ResetGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ShowMessage">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/ShowMessage" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayerControl">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/PlayerControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearScreen">
+      <soap12:operation soapAction="http://tempuri.org/IGameService/ClearScreen" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GameService">
+    <wsdl:port name="NetTcpBinding_IGameService" binding="tns:NetTcpBinding_IGameService">
+      <soap12:address location="net.tcp://localhost:8000/JinhuaBarOL/GameService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8000/JinhuaBarOL/GameService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>
+          </Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
